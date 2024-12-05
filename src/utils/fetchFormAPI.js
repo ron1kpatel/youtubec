@@ -1,23 +1,29 @@
-import axios from "axios";
+import axios from 'axios';
+
+// Load the API key from the environment variable
+const API_KEY = process.env.REACT_APP_RAPID_API_KEY;
 const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
+
+// Set default options for the API call
 const options = {
-    method: 'GET',
-    url: BASE_URL,
-    params: {
-    //   relatedToVideoId: '7ghhRHRP6t4',
-    //   part: 'id,snippet',
-    //   type: 'video',
-      maxResults: '50'
-    },
-    headers: {
-      'x-rapidapi-key': '5590125f2amsh2012b55456942dfp1da21cjsn3cd015f8910a',
-      'x-rapidapi-host': 'youtube-v31.p.rapidapi.com'
-    }
-  };
+  method: 'GET',
+  headers: {
+    'x-rapidapi-key': API_KEY,
+    'x-rapidapi-host': 'youtube-v31.p.rapidapi.com'
+  }
+};
 
-
-  export const fetchFromAPI = async (url) => {
-     const {data} =   await axios.get(`${BASE_URL}/${url}`, options);
+// The function to fetch data from the API
+export const fetchFromAPI = async (url, params = {}) => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/${url}`, {
+      ...options,
+      params: { ...params, maxResults: '50' } // Adding default params like maxResults
+    });
 
     return data;
+  } catch (error) {
+    console.error("Error fetching data from API:", error);
+    return null; // Optionally return null or an empty object if error occurs
   }
+};
