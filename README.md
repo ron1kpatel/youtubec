@@ -39,6 +39,7 @@ REACT_APP_RAPID_API_KEY=your-rapidapi-key-here````
 ```bash
 npm start
 # or
-yarn start```
+yarn start
+```
 
 This will start the development server and open the app in your browser.
