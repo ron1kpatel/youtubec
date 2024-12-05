@@ -42,9 +42,3 @@ npm start
 yarn start```
 
 This will start the development server and open the app in your browser.
-
-### Technologies Used
-
-	•	React
-	•	Axios (for API requests)
-	•	YouTube API via RapidAPI
