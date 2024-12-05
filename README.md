@@ -33,7 +33,8 @@ Before you can run this project locally, make sure you have the following instal
     ```
 3.	Create an .env file in the root of the project with your RapidAPI key:
 ```bash
-REACT_APP_RAPID_API_KEY=your-rapidapi-key-here````
+REACT_APP_RAPID_API_KEY=your-rapidapi-key-here
+```
 
 4.	Run the application locally:
 ```bash
